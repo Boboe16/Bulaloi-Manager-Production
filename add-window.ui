@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>375</width>
+    <height>390</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Add</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: gray;</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>341</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QComboBox" name="appOrGame">
+      <property name="currentText">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>App or Game</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>App or Game</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Game</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>App</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="appPicture">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>App Image URL</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="appName">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>App Name</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="appRating">
+      <property name="placeholderText">
+       <string>App Rating 1 to 5</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="appDownloadLink">
+      <property name="placeholderText">
+       <string>appDownloadLink</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="appDescription">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="placeholderText">
+       <string>appDescription</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="appCategory">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="placeholderText">
+       <string>Category</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Game Category</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Role-playing</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fps</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Adventure</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Action</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Casual</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Arcade</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Addon and mods</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>App Category</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Phone editor</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Task-app management</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Video player and editor</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Music</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Productivity</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="appVersion">
+      <property name="placeholderText">
+       <string>appVersion</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="appRequirement">
+      <property name="placeholderText">
+       <string>appRequirement</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="appSize">
+      <property name="placeholderText">
+       <string>appSIze</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="addButton">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>360</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
