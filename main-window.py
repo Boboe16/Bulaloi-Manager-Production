@@ -83,7 +83,9 @@ class Search_Form(QtCore.QObject):
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def search(self):
-        self.searchSignal.emit(self.searchInput.text())
+        # Gives the search input text to the Main Window, 
+        # then Main Window will use it to filter the apps that has the text that Search Window gaved
+        self.searchSignal.emit(self.searchInput.text()) 
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -398,7 +400,7 @@ class Ui_MainWindow(QMainWindow):
         self.SearchWindow.setWindowTitle(self._translate("MainWindow", "Bulaloi Manager"))
         self.SearchWindow.show()
         
-        self.ui.searchSignal.connect(self.searchApps)
+        self.ui.searchSignal.connect(self.searchApps) 
 
     def searchApps(self, data):
         print(f"Searching for: {data}")
@@ -412,7 +414,7 @@ class Ui_MainWindow(QMainWindow):
         print(filteredAppDicsToIterate)
 
         self.resetAppsList()
-        self.iterateApps(filteredAppDicsToIterate, isItNotFiltered=False)
+        self.iterateApps(filteredAppDicsToIterate, displayNoneFilteredApps=False)
 
     def resetAppsList(self):
         for button in self.buttons[:]:  # Iterate over a copy of the buttons list
@@ -428,7 +430,7 @@ class Ui_MainWindow(QMainWindow):
         print("Refresh button clicked")
         self.resetAppsList()
         self.listOfAppDicsToIterate.clear()
-        self.iterateApps(self.listOfAppDicsToIterate, isItNotFiltered=True)
+        self.iterateApps(self.listOfAppDicsToIterate, displayNoneFilteredApps=True)
     
     def addApp(self):
         print("Add button clicked")
@@ -511,13 +513,13 @@ class Ui_MainWindow(QMainWindow):
                 # print("else is working but not its if")
         # print(f"Selected apps to delete: {self.toDeleteApps}")
 
-    def iterateApps(self, listToIterate, isItNotFiltered=bool):
+    def iterateApps(self, listToIterate, displayNoneFilteredApps=bool):
             listOfAppNames = os.listdir(r'./Bulaloi-App-Production\next-app\public\apps-games-data\apps')
             listOfGameNames = os.listdir(r'./Bulaloi-App-Production\next-app\public\apps-games-data\games')
             appsDir = r'./Bulaloi-App-Production\next-app\public\apps-games-data\apps/'
             gamesDir = r'./Bulaloi-App-Production\next-app\public\apps-games-data\games/'
 
-            if isItNotFiltered:
+            if displayNoneFilteredApps: # If displayNoneFilteredApps is `true` we will display the all the apps, if its `false` we will display the filtered apps
                 for Name in listOfAppNames:
                     with open(appsDir + Name, 'r') as file:
                         data = json.load(file)
