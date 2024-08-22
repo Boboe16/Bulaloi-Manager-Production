@@ -51,7 +51,7 @@ class Save_Form(QtCore.QObject):
 
     def save(self, commitMessage):
         print(commitMessage)
-        directoryPath = r'.\Bulaloi-App-Development-Production/next-app'
+        directoryPath = r'.\Bulaloi-App-Production/next-app'
         fullPath = os.path.join(directoryPath)
         print(fullPath)
         command = subprocess.run(['cd', fullPath , '&&', 'git', 'add', '.', '&&', 'git', 'commit', '-m', f'"{commitMessage}"', '&&', 'git', 'push', 'origin', 'main'], shell=True, capture_output=True, text=True)
@@ -311,7 +311,7 @@ class Add_Edit_Form(QtCore.QObject):
 
     # Method to save the app data to a JSON file
     def saveAppToFile(self, app):
-        directory = r'.\Bulaloi-App-Development-Production\next-app\public\apps-games-data'
+        directory = r'.\Bulaloi-App-Production\next-app\public\apps-games-data'
         directory += r'\games' if app.appOrGame == "Game" else r'\apps'
         print(self.oldAppName)
         subprocess.run(['cd', directory, '&&', 'del', f'{self.oldAppName}.json'], shell=True, capture_output=True,) if self.addOrEdit == "edit" else print("No oldAppName found")
@@ -550,8 +550,8 @@ class Ui_MainWindow(QMainWindow):
         print("Delete button clicked")
         # print(f"Selected apps to delete: {self.toDeleteApps}")
 
-        appsDir = r'./Bulaloi-App-Development-Production/next-app/public/apps-games-data/apps/'
-        gamesDir = r'./Bulaloi-App-Development-Production/next-app/public/apps-games-data/games/'
+        appsDir = r'./Bulaloi-App-Production/next-app/public/apps-games-data/apps/'
+        gamesDir = r'./Bulaloi-App-Production/next-app/public/apps-games-data/games/'
 
         for app in self.toDeleteApps:
             if app["appOrGame"] == "Game":
@@ -583,10 +583,10 @@ class Ui_MainWindow(QMainWindow):
         # print(f"Selected apps to delete: {self.toDeleteApps}")
 
     def iterateApps(self, listToIterate, displayNoneFilteredApps=bool):
-            listOfAppNames = os.listdir(r'./Bulaloi-App-Development-Production\next-app\public\apps-games-data\apps')
-            listOfGameNames = os.listdir(r'./Bulaloi-App-Development-Production\next-app\public\apps-games-data\games')
-            appsDir = r'./Bulaloi-App-Development-Production\next-app\public\apps-games-data\apps/'
-            gamesDir = r'./Bulaloi-App-Development-Production\next-app\public\apps-games-data\games/'
+            listOfAppNames = os.listdir(r'./Bulaloi-App-Production\next-app\public\apps-games-data\apps')
+            listOfGameNames = os.listdir(r'./Bulaloi-App-Production\next-app\public\apps-games-data\games')
+            appsDir = r'./Bulaloi-App-Production\next-app\public\apps-games-data\apps/'
+            gamesDir = r'./Bulaloi-App-Production\next-app\public\apps-games-data\games/'
 
             if displayNoneFilteredApps: # If displayNoneFilteredApps is `true` we will display the all the apps, if its `false` we will display the filtered apps
                 for Name in listOfAppNames:
@@ -656,11 +656,11 @@ def showMainWindow():
         MainWindow.show()
         sys.exit(app.exec())
 
-if os.path.exists('./Bulaloi-App-Development-Production'):
+if os.path.exists('./Bulaloi-App-Production'):
     print("Repo already cloned, skipping clone step")
-    subprocess.run(['cd', 'Bulaloi-App-Development-Production/next-app', '&&', 'git', 'pull'], shell=True, capture_output=True, text=True)
+    subprocess.run(['cd', 'Bulaloi-App-Production/next-app', '&&', 'git', 'pull'], shell=True, capture_output=True, text=True)
     showMainWindow()
 else:
     print("Cloning repo...")
-    subprocess.run(['git', 'clone', 'https://github.com/Boboe16/Bulaloi-App-Development-Production'], shell=True, capture_output=True, text=True)
+    subprocess.run(['git', 'clone', 'https://github.com/Boboe16/Bulaloi-App-Production'], shell=True, capture_output=True, text=True)
     showMainWindow()
