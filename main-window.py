@@ -42,7 +42,7 @@ class Save_Form(QtCore.QObject):
         self.noButton.setStyleSheet(self.styleForButtons)
         self.saveButton.setStyleSheet(self.styleForButtons)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("B-icon.png"), QtGui.QIcon.Mode.Selected, QtGui.QIcon.State.On)
+        icon.addPixmap(QtGui.QPixmap("./Bulaloi-App-Production/next-app/public/B-icon.png"), QtGui.QIcon.Mode.Selected, QtGui.QIcon.State.On)
         Form.setWindowIcon(icon)
 
         self.retranslateUi(Form)
@@ -101,7 +101,7 @@ class Search_Form(QtCore.QObject):
         self.searchButton.clicked.connect(Form.close)
         self.searchButton.setStyleSheet(self.styleForButtons)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("B-icon.png"), QtGui.QIcon.Mode.Selected, QtGui.QIcon.State.On)
+        icon.addPixmap(QtGui.QPixmap("./Bulaloi-App-Production/next-app/public/B-icon.png"), QtGui.QIcon.Mode.Selected, QtGui.QIcon.State.On)
         Form.setWindowIcon(icon)
 
         self.retranslateUi(Form)
@@ -163,7 +163,7 @@ class Delete_Form(QtCore.QObject):
         self.yesButton.clicked.connect(Form.close)
         self.yesButton.setStyleSheet(self.styleForButtons)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("B-icon.png"), QtGui.QIcon.Mode.Selected, QtGui.QIcon.State.On)
+        icon.addPixmap(QtGui.QPixmap("./Bulaloi-App-Production/next-app/public/B-icon.png"), QtGui.QIcon.Mode.Selected, QtGui.QIcon.State.On)
         Form.setWindowIcon(icon)
 
         self.retranslateUi(Form)
@@ -332,7 +332,7 @@ class Add_Edit_Form(QtCore.QObject):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QtCore.QCoreApplication.translate("Form", "Add"))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("B-icon.png"), QtGui.QIcon.Mode.Selected, QtGui.QIcon.State.On)
+        icon.addPixmap(QtGui.QPixmap("./Bulaloi-App-Production/next-app/public/B-icon.png"), QtGui.QIcon.Mode.Selected, QtGui.QIcon.State.On)
         Form.setWindowIcon(icon)
 
 
@@ -352,7 +352,7 @@ class Ui_MainWindow(QMainWindow):
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setMinimumSize(QtCore.QSize(0, 0))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("B-icon.png"), QtGui.QIcon.Mode.Selected, QtGui.QIcon.State.On)
+        icon.addPixmap(QtGui.QPixmap("./Bulaloi-App-Production/next-app/public/B-icon.png"), QtGui.QIcon.Mode.Selected, QtGui.QIcon.State.On)
         MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background: #D9D9D9;")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
