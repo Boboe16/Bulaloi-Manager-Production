@@ -25,7 +25,7 @@ BULALOI MANAGER is built using the following technologies:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/bulaloi-manager.git
+   git clone https://github.com/Boboe16/bulaloi-manager.git
    ```
 2. Navigate to the project directory:
    ```bash
